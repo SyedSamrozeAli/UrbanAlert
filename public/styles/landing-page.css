@@ -64,7 +64,7 @@ nav {
   justify-content: center;
 }
 #home .bg-img {
-  background: url(/public/images/home.jpg) no-repeat center center;
+  background: url(/images/home.jpg) no-repeat center center;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -381,7 +381,7 @@ h1 {
 }
 
 #footer .bg-img {
-  background: url(/public/images/footer.jpeg) no-repeat center center;
+  background: url(/images/footer.jpeg) no-repeat center center;
   background-size: cover;
   background-position: center;
   width: 100%;
