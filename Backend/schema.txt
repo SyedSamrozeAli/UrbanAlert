@@ -1,0 +1,38 @@
+USER SCHEMA
+1.FullName
+2.Username
+3.Email
+4.Address
+5.Password
+6.ProfileImage
+7.Contact No
+8.Reports
+9.Votes
+10.role [User]
+
+
+ADMIN SCHEMA
+1.FullName
+2.Username
+3.Email
+5.Password
+6.ProfileImage
+7.Role [Admin]
+
+REPORTS SCHEMA
+1.Title
+2.Description
+3.Images []
+4.loaction -> longitude . latitude
+5.Reporter_id
+6.Votes []
+7.Report Status -> [reported,in progress,resolved]
+8.Timeline -> {status name: [reported,in porgress,resolved] , date}
+9.Issue Type [streetlights,graffti,pothloes]
+10.Priority Level [low,med,high]
+11.Resolution Time
+
+
+VOTES SCHEMA
+1.Reporter_id
+2.Report_id
