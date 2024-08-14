@@ -6,6 +6,7 @@ import { Contact } from "./Contact";
 import { HowToUse } from "./HowToUse";
 import { Login } from "./login";
 import { Register } from "./Register";
+import { UserDashboard } from "./UserDashboard";
 
 export const LandingPage = () => {
   return (
@@ -19,6 +20,7 @@ export const LandingPage = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
         </Routes>
       </BrowserRouter>
     </>
