@@ -62,7 +62,7 @@ async function handleLoginUser(req, res) {
         let resStatus = 200; // Default response status
         let resMessage = ""; // Default response message
         let resSuccess = true; // Default response success state
-
+        let token = null;
         console.log("Login user data: ", req.body);
 
         // Check if email or password is missing
@@ -77,7 +77,7 @@ async function handleLoginUser(req, res) {
             console.log("User authenticated");
 
             // Generate a token for the authenticated user
-            const token = setUser(loginUser);
+            token = setUser(loginUser);
             res.cookie("uid", token); // Set the token in a cookie
 
             resMessage = "User logged in successfully";
@@ -89,7 +89,7 @@ async function handleLoginUser(req, res) {
             resMessage = "Incorrect Login credentials"; // Set failure message
         }
 
-        return res.send(response(resSuccess, resStatus, resMessage)); // Send the response
+        return res.send(response(resSuccess, resStatus, resMessage, token)); // Send the response
 
     } catch (err) {
         console.error("Error during login:", err);
