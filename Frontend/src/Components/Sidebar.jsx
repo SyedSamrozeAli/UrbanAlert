@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import "../styles/sidebar.css";
+import { NavLink, Outlet } from "react-router-dom";
+import "../styles/dashboard.css";
 
 export const Sidebar = () => {
   return (
@@ -12,7 +12,7 @@ export const Sidebar = () => {
           <div className="sidebar-link active">
             <img src="/images/dashboard-home.png" alt="" height={20} />
             <NavLink
-              to="/user/dashboard"
+              to="/user/dashboard/home"
               style={{ textDecoration: "none", color: "#e9edc9" }}
             >
               Dashboard
@@ -76,6 +76,7 @@ export const Sidebar = () => {
           </div>
         </div>
       </div>
+      <Outlet />
     </>
   );
 };
