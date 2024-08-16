@@ -7,7 +7,7 @@ import { HowToUse } from "./pages/HowToUse";
 import { Login } from "./pages/login";
 import { Register } from "./pages/Register";
 import { UserDashboardLayout } from "./Layouts/UserDashboardLayout";
-import { DashboardHome } from "./pages/Dashboard/DashboardHome";
+import { DashboardHome } from "./pages/user-dashboard/DashboardHome";
 
 export const App = () => {
   return (
