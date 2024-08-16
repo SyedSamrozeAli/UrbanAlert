@@ -3,7 +3,8 @@ import "../styles/dashboard.css";
 
 export const DashboardNavbar = () => {
   //getting the user from the redux store
-  const user = useSelector((state) => state.user).currentUser;
+  const user = useSelector((state) => state.user.currentUser);
+  // console.log("USER Navbar: ", user);
   return (
     <>
       <div className="dashboard-navbar">
