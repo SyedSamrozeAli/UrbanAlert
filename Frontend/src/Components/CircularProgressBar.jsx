@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-export const CircularProgressBar = ({ percentage }) => {
+export const CircularProgressBar = ({
+  percentage,
+  radius,
+  width,
+  color,
+  strokeWidth,
+}) => {
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
-  const width = 80;
-  const radius = 30;
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * animatedPercentage) / 100;
 
@@ -31,14 +35,14 @@ export const CircularProgressBar = ({ percentage }) => {
           <circle
             cx={width / 2}
             cy={width / 2}
-            strokeWidth="5px"
+            strokeWidth={strokeWidth}
             r={radius}
             className="circle-background"
           />
           <circle
             cx={width / 2}
             cy={width / 2}
-            strokeWidth="5px"
+            strokeWidth={strokeWidth}
             r={radius}
             className="circle-progress"
             style={{
@@ -55,7 +59,7 @@ export const CircularProgressBar = ({ percentage }) => {
             textAnchor="middle"
             className="circle-text"
             style={{ fontWeight: "600" }}
-            fill="#2e484b"
+            fill={color}
           >
             {animatedPercentage}%
           </text>
@@ -67,4 +71,8 @@ export const CircularProgressBar = ({ percentage }) => {
 
 CircularProgressBar.propTypes = {
   percentage: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  radius: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  strokeWidth: PropTypes.string.isRequired,
 };

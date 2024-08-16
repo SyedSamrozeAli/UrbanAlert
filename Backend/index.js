@@ -5,8 +5,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 import url from "url";
 import cookieParser from "cookie-parser";
+
+//Importing Routes
 import loginRegisterRoutes from "./routes/login-register-routes.js";
 import userRoutes from "./routes/user-routes.js";
+import reportsRoute from "./routes/reports-route.js";
+
 import { restrictToLoggedInUserOnly } from "./middleware/authentication.js";
 
 connectMongoDb("mongodb://127.0.0.1:27017/UrbanAlert-Database");
@@ -57,4 +61,5 @@ app.set("views", path.resolve("./views"));
 
 app.use('/api/auth', loginRegisterRoutes);
 app.use('/api/user', restrictToLoggedInUserOnly, userRoutes);
+app.use('/api/reports', restrictToLoggedInUserOnly, reportsRoute);
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));

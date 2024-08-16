@@ -21,6 +21,7 @@ const reportSchema = new mongoose.Schema({
     },
     reporter_id: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         require: true,
     },
     votes: [
