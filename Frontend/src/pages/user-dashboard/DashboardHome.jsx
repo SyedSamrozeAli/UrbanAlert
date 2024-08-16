@@ -4,8 +4,14 @@ import { StatsCard } from "../../Components/StatsCard";
 
 export const DashboardHome = () => {
   //getting the user from the redux store
-  const user = useSelector((state) => state.user).currentUser;
+  const user = useSelector((state) => state.user.currentUser);
+  const userReports = useSelector((state) => state.reports.currentUserReports);
+  const allReports = useSelector((state) => state.reports.allReports);
+  console.log(allReports);
 
+  let count = 3;
+  allReports.forEach((report) => {});
+  // console.log("USER Home: ", user);
   return (
     <>
       <div className="dashboard-container">
