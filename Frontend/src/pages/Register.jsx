@@ -46,7 +46,7 @@ export const Register = () => {
 
     // Make a POST request to register the user
     axios
-      .post("/api/user/register", JSON.stringify(data), {
+      .post("/api/auth/register", JSON.stringify(data), {
         headers: {
           "Content-Type": "application/json", // Set the request headers
         },

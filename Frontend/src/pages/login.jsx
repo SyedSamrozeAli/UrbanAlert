@@ -34,7 +34,7 @@ export const Login = () => {
 
     // Make a POST request to login the user
     axios
-      .post("/api/user/login", data, {
+      .post("/api/auth/login", data, {
         headers: {
           "Content-Type": "application/json", // Set the request headers
         },
