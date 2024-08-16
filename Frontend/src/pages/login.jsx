@@ -4,6 +4,7 @@ import AOS from "aos"; // Animation on scroll library
 import "aos/dist/aos.css"; // AOS styles
 import "../styles/login-page.css"; // Custom CSS for the login page
 import axios from "axios"; // HTTP client for API requests
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   // State to manage form input data
@@ -11,6 +12,8 @@ export const Login = () => {
     email: "",
     password: "",
   });
+  // Hook to navigate to User Dashboard after succesfull login
+  const navigate = useNavigate();
 
   // State to manage error messages
   const [error, setError] = useState(null);
@@ -48,6 +51,9 @@ export const Login = () => {
             email: "",
             password: "",
           });
+
+          // Navigate to User Dashboard
+          navigate("/user/dashboard");
         } else {
           setError(response.data); // Set the error message in case of failure
         }
