@@ -30,7 +30,7 @@ async function handleRegisterUser(req, res) {
 
             // Send the response after a delay of 1.5 seconds (simulating processing time)
             setTimeout(() => {
-                return res.send(response(true, 200, "User registered successfully", newUser));
+                return res.send(response(true, 200, "User registered successfully", "user", newUser));
             }, 1500);
 
         } catch (error) {
@@ -89,7 +89,7 @@ async function handleLoginUser(req, res) {
             resMessage = "Incorrect Login credentials"; // Set failure message
         }
 
-        return res.send(response(resSuccess, resStatus, resMessage, token)); // Send the response
+        return res.send(response(resSuccess, resStatus, resMessage, "token", token)); // Send the response
 
     } catch (err) {
         console.error("Error during login:", err);
