@@ -8,12 +8,14 @@ function errorResponse(error, errorCode = 400, errorMsg = null) {
     };
 }
 
-function response(success = true, status = 200, msg = null, data = null) {
+function response(success = true, status = 200, msg = null, keyName, data = null) {
     return {
         success: success,
         status: status,
         message: msg,
-        data: data,
+        data: {
+            [keyName]: data,
+        },
     }
 }
 export { errorResponse, response };
