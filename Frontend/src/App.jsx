@@ -7,7 +7,7 @@ import { HowToUse } from "./pages/HowToUse";
 import { Login } from "./pages/login";
 import { Register } from "./pages/Register";
 import { UserDashboardLayout } from "./Layouts/UserDashboardLayout";
-import { UserDashboard } from "./pages/UserDashboard";
+import { DashboardHome } from "./pages/Dashboard/DashboardHome";
 
 export const App = () => {
   return (
@@ -21,11 +21,8 @@ export const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route
-            path="/user/:userId/dashboard"
-            element={<UserDashboardLayout />}
-          >
-            <Route path="" element={<UserDashboard />} />
+          <Route path="/user/dashboard" element={<UserDashboardLayout />}>
+            <Route path="home" element={<DashboardHome />} />
           </Route>
         </Routes>
       </BrowserRouter>
