@@ -1,7 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "../styles/dashboard.css";
+// import { useState } from "react";
 
 export const Sidebar = () => {
+  // const [currentLink, setCurrentLink] = useState({ link: "dashboard" });
+
   return (
     <>
       <div className="sidebar">
