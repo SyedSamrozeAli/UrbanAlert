@@ -43,9 +43,8 @@ export const Login = () => {
         },
       })
       .then((response) => {
-        if (response.success == true) {
+        if (response.data.success == true) {
           console.log("Login Successfully:", response); // Log the success message
-
           // Reset the form data
           setData({
             email: "",
@@ -53,7 +52,7 @@ export const Login = () => {
           });
 
           // Navigate to User Dashboard
-          navigate("/user/dashboard");
+          navigate("/user/dashboard/home");
         } else {
           setError(response.data); // Set the error message in case of failure
         }
