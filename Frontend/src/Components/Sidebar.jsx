@@ -3,8 +3,6 @@ import "../styles/dashboard.css";
 // import { useState } from "react";
 
 export const Sidebar = () => {
-  // const [currentLink, setCurrentLink] = useState({ link: "dashboard" });
-
   return (
     <>
       <div className="sidebar">
@@ -12,11 +10,12 @@ export const Sidebar = () => {
           <h1>UrbanAlert</h1>
         </div>
         <div className="sidebar-links">
-          <div className="sidebar-link active">
+          <div className="sidebar-link">
             <img src="/images/dashboard-home.png" alt="" height={20} />
             <NavLink
               to="/user/dashboard/home"
-              style={{ textDecoration: "none", color: "#e9edc9" }}
+              style={{ textDecoration: "none" }}
+              className="my-link"
             >
               Dashboard
             </NavLink>
@@ -25,7 +24,8 @@ export const Sidebar = () => {
             <img src="/images/dashboard-community.png" alt="" height={20} />
             <NavLink
               to="/user/dashboard/community"
-              style={{ textDecoration: "none", color: "#e9edc9" }}
+              style={{ textDecoration: "none" }}
+              className="my-link"
             >
               Community
             </NavLink>
@@ -34,7 +34,8 @@ export const Sidebar = () => {
             <img src="/images/dashboard-newreport.png" alt="" height={20} />
             <NavLink
               to="/user/dashboard/new-report"
-              style={{ textDecoration: "none", color: "#e9edc9" }}
+              style={{ textDecoration: "none" }}
+              className="my-link"
             >
               New Report
             </NavLink>
@@ -43,7 +44,8 @@ export const Sidebar = () => {
             <img src="/images/dashboard-myreport.png" alt="" height={20} />
             <NavLink
               to="/user/dashboard/my-report"
-              style={{ textDecoration: "none", color: "#e9edc9" }}
+              style={{ textDecoration: "none" }}
+              className="my-link"
             >
               My Report
             </NavLink>
@@ -52,7 +54,8 @@ export const Sidebar = () => {
             <img src="/images/dashboard-trackissues.png" alt="" height={20} />
             <NavLink
               to="/user/dashboard/track-issues"
-              style={{ textDecoration: "none", color: "#e9edc9" }}
+              style={{ textDecoration: "none" }}
+              className="my-link"
             >
               Track Issues
             </NavLink>
@@ -63,7 +66,8 @@ export const Sidebar = () => {
             <img src="/images/dashboard-settings.png" alt="" height={20} />
             <NavLink
               to="/user/dashboard/settings"
-              style={{ textDecoration: "none", color: "#e9edc9" }}
+              style={{ textDecoration: "none" }}
+              className="my-link"
             >
               Settings
             </NavLink>
@@ -72,7 +76,8 @@ export const Sidebar = () => {
             <img src="/images/dashboard-logout.png" alt="" height={25} />
             <NavLink
               to="/user/dashboard/logout"
-              style={{ textDecoration: "none", color: "#e9edc9" }}
+              style={{ textDecoration: "none" }}
+              className="my-link"
             >
               Logout
             </NavLink>
