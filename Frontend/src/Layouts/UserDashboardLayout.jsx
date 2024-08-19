@@ -7,7 +7,7 @@ import { DashboardNavbar } from "../Components/DashboardNavbar";
 import { Loading } from "../Components/Loading";
 import { Error } from "../Components/Error";
 import "../styles/dashboard.css";
-
+import { toast } from "react-toastify";
 export const UserDashboardLayout = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -24,12 +24,12 @@ export const UserDashboardLayout = () => {
         // getting the user data from our response and saving it in state
 
         dispatch(setCurrentUser(response.data.data.userData));
-        // Setting the reports of current user in state
-        // dispatch(setCurrentUserReports(response.data.data.userData.reports));
 
         setLoading(false);
       })
       .catch((error) => {
+        toast.error(error.message);
+
         setError(error.message);
         setLoading(false);
       });
@@ -39,7 +39,7 @@ export const UserDashboardLayout = () => {
     <>
       <div className="dashboard-layout">
         {loading == true && <Loading />}
-        {error && <Error />}
+        {/* {error && <Error />} */}
         <DashboardNavbar />
         <Sidebar />
       </div>
