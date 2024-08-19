@@ -26,40 +26,13 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
 
-// app.get("/", (req, res) => {
-//     res.sendFile(__dirname + "/index.html");
-// });
-
-// app.get("/login", (req, res) => {
-//     const queryPara = url.parse(req.url, true).query;
-
-//     if (queryPara.success)
-//         //if /login/?success=true
-//         res.render("login-page.ejs", { successMsg: "User registered successfully!" });
-//     else
-
-//         res.render("login-page.ejs");
-// })
-
-// app.get("/register", (req, res) => {
-
-//     const queryPara = url.parse(req.url, true).query;
-
-//     // if /login/emailError=true
-//     if (queryPara.emailError)
-//         res.status(400).render("register-page.ejs", {
-//             err_msg: "Email already in use",
-//         });
-//     // if /login/usernameError=true
-//     else if (queryPara.usernameError)
-//         res.status(400).render("register-page.ejs", {
-//             err_msg: "Username already in use",
-//         });
-//     else
-//         res.render("register-page.ejs");
-// });
-
+// Login Registration Routes
 app.use('/api/auth', loginRegisterRoutes);
+
+// User Routes
 app.use('/api/user', restrictToLoggedInUserOnly, userRoutes);
+
+// Reports Routes
 app.use('/api/reports', restrictToLoggedInUserOnly, reportsRoute);
+
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));

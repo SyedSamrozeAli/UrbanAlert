@@ -63,7 +63,7 @@ async function handleLoginUser(req, res) {
         let resMessage = ""; // Default response message
         let resSuccess = true; // Default response success state
         let token = null;
-        console.log("Login user data: ", req.body);
+        // console.log("Login user data: ", req.body);
 
         // Check if email or password is missing
         if (!email || !pass) {

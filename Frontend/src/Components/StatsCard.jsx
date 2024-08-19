@@ -24,8 +24,8 @@ export const StatsCard = ({ image, heading, sentence, number, total }) => {
           <div className="progress-circle">
             <CircularProgressBar
               percentage={(number / total) * 100}
-              radius={30}
-              width={80}
+              radius={25}
+              width={60}
               color="#2e484b"
               strokeWidth="5px"
             />

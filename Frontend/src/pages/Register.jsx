@@ -5,6 +5,7 @@ import "aos/dist/aos.css"; // Import AOS styles
 import "../styles/login-page.css"; // Custom CSS for the login page
 import axios from "axios"; // HTTP client for making requests
 import { useNavigate } from "react-router-dom"; // Hook for navigation
+import { toast } from "react-toastify";
 
 export const Register = () => {
   // State to manage form input data
@@ -67,16 +68,30 @@ export const Register = () => {
             password: "",
           });
 
+          const successToast = toast.success("User Registered in Successfully");
+          toast.update(successToast, {
+            autoClose: 1500,
+          });
+
           // Navigate to the login page
           navigate("/login");
         } else {
           // Set the error message in case of failure
           setError(response.data);
+          console.log("Error: ", response.data);
+          const errorToast = toast.error(response.data.message);
+          toast.update(errorToast, {
+            position: "top-left",
+          });
         }
       })
       .catch((error) => {
         // Catch and set any error that occurs during the request
         setError(error);
+        const errorToast = toast.error(error.message);
+        toast.update(errorToast, {
+          position: "top-left",
+        });
       });
   }
 
@@ -257,13 +272,6 @@ export const Register = () => {
 
             {/* Submit button */}
             <button type="submit">Register</button>
-
-            {/* Display error message if there's any */}
-            {error && (
-              <p style={{ color: "red" }}>
-                <i>{error.message}</i>
-              </p>
-            )}
           </form>
 
           {/* Social login buttons */}

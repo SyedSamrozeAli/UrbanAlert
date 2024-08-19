@@ -40,6 +40,13 @@
   gap: 20px;
 }
 
+.my-link {
+  color: #e9edc971;
+}
+.active {
+  color: #e9edc9;
+}
+
 /* DASHBOARD NAVIGATION BAR */
 
 .dashboard-navbar {
@@ -68,7 +75,7 @@
 }
 
 .profile-name p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 18px;
@@ -77,11 +84,11 @@
 }
 
 .profile-email p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10.5px;
   font-weight: 100;
   text-align: left;
-  color: #446b61;
+  color: #2a463f;
 }
 
 /* LOADING AND ERROR MODAL */
@@ -104,7 +111,7 @@
 .loading-modal p,
 .error-modal p {
   font-size: 40px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-style: normal;
   z-index: 2;
@@ -113,27 +120,34 @@
 /* HOME CONTAINER */
 
 .home {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   background-color: #d8e3d0;
   height: 100%;
-  padding: 12px 30px;
+  padding: 0px 30px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  gap: 30px;
 }
 
 .home h1 {
-  font-size: 4vw;
+  font-size: 3.2vw;
 }
 
 .home-cards {
-  margin-top: 25px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: start;
-  gap: 40px;
+  width: 100%;
 }
 .dashboard-card {
-  width: 250px;
-  height: 200px;
+  width: 270px;
+  height: 180px;
   background-color: white;
   border-radius: 10px;
   padding: 20px;
@@ -149,13 +163,13 @@
 
 .card-stats-1 {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   gap: 6px;
 }
 
 .card-number {
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 700;
 }
 
@@ -185,6 +199,94 @@
 }
 
 .circle-text {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
+  font-size: small;
+}
+
+.community-card {
+  gap: 10px;
+  padding-left: 30px;
+}
+.card-reports-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card-single-report {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content max-content;
+}
+
+.card-img-container {
+  grid-area: 1/2/3/3;
+  /* margin-left: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 7px;
+  margin-left: 15px;
+}
+
+.card-username {
+  font-size: 0.9vw;
+  font-weight: 600;
+  color: #84a98c80;
+  text-align: right;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #446b61;
+  font-size: 1vw;
+}
+
+/* .card-title::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: #446b61;
+  position: absolute;
+} */
+
+.home-bottom-container {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.bottom-card-reports-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.bottom-card-single-report {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+.bottom-card-title {
+  font-weight: 600;
+  font-size: 1.5vw;
+}
+
+.bottom-card-voteCount {
+  font-size: 2vw;
+  font-weight: 900;
 }

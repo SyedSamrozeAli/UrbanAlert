@@ -5,6 +5,7 @@ import "aos/dist/aos.css"; // AOS styles
 import "../styles/login-page.css"; // Custom CSS for the login page
 import axios from "axios"; // HTTP client for API requests
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   // State to manage form input data
@@ -43,23 +44,27 @@ export const Login = () => {
         },
       })
       .then((response) => {
-        if (response.success == true) {
+        if (response.data.success == true) {
           console.log("Login Successfully:", response); // Log the success message
-
           // Reset the form data
           setData({
             email: "",
             password: "",
           });
-
+          const successToast = toast.success("User Logged in Successfully");
+          toast.update(successToast, {
+            autoClose: 1500,
+          });
           // Navigate to User Dashboard
-          navigate("/user/dashboard");
+          navigate("/user/dashboard/home");
         } else {
           setError(response.data); // Set the error message in case of failure
+          toast.error(response.data.message);
         }
       })
       .catch((error) => {
         console.log(error); // Log any error that occurs
+        toast.error(error.message);
         setError(error); // Set the error state
       });
   }
@@ -137,13 +142,6 @@ export const Login = () => {
             </div>
 
             <button type="submit">Login</button>
-
-            {/* Display error message if any */}
-            {error && (
-              <p style={{ color: "red" }}>
-                <i>{error.message}</i>
-              </p>
-            )}
           </form>
 
           {/* Social login buttons */}
