@@ -40,6 +40,13 @@
   gap: 20px;
 }
 
+.my-link {
+  color: #e9edc971;
+}
+.active {
+  color: #e9edc9;
+}
+
 /* DASHBOARD NAVIGATION BAR */
 
 .dashboard-navbar {
@@ -68,7 +75,7 @@
 }
 
 .profile-name p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 18px;
@@ -77,11 +84,11 @@
 }
 
 .profile-email p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10.5px;
   font-weight: 100;
   text-align: left;
-  color: #446b61;
+  color: #2a463f;
 }
 
 /* LOADING AND ERROR MODAL */
@@ -104,7 +111,7 @@
 .loading-modal p,
 .error-modal p {
   font-size: 40px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-style: normal;
   z-index: 2;
@@ -113,7 +120,7 @@
 /* HOME CONTAINER */
 
 .home {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   background-color: #d8e3d0;
   height: 100%;
@@ -192,7 +199,7 @@
 }
 
 .circle-text {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-size: small;
 }
