@@ -3,6 +3,7 @@ import "../../styles/dashboard.css";
 import { StatsCard } from "../../Components/StatsCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const DashboardHome = () => {
   //getting the user from the redux store
@@ -13,6 +14,7 @@ export const DashboardHome = () => {
   const [loading, setLoading] = useState(true);
   let count = 0;
   const colors = ["#26353D", "#2E484B", "#446B61"];
+  console.log(user);
   // const userReports = useSelector((state) => state.reports.currentUserReports);
   // const allReports = useSelector((state) => state.reports.allReports);
   // console.log(allReports);
@@ -54,6 +56,7 @@ export const DashboardHome = () => {
       })
       .catch(() => {
         setError(true);
+        toast.error(error.message);
       })
       .finally(() => setLoading(false));
   }, []);
@@ -75,7 +78,7 @@ export const DashboardHome = () => {
               image="/images/thumbsUp.png"
               heading="My Votes"
               sentence="Issues voted on"
-              number={12}
+              number={user.votes.length}
               total={20}
             />
             <StatsCard
