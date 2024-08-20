@@ -14,10 +14,6 @@ export const DashboardHome = () => {
   const [loading, setLoading] = useState(true);
   let count = 0;
   const colors = ["#26353D", "#2E484B", "#446B61"];
-  console.log(user);
-  // const userReports = useSelector((state) => state.reports.currentUserReports);
-  // const allReports = useSelector((state) => state.reports.allReports);
-  // console.log(allReports);
 
   // console.log("USER Home: ", user);
   useEffect(() => {
@@ -78,7 +74,8 @@ export const DashboardHome = () => {
               image="/images/thumbsUp.png"
               heading="My Votes"
               sentence="Issues voted on"
-              number={user.votes.length}
+              number={user.votes != null ? user.votes.length : 0}
+              // number={13}
               total={20}
             />
             <StatsCard
