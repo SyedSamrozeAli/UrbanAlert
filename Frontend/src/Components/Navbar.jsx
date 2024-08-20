@@ -18,7 +18,7 @@ export const Navbar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/features">Features</NavLink>
-        <NavLink to="/howToUse">How it Works</NavLink>
+        <NavLink to="/how-to-use">How it Works</NavLink>
         <NavLink to="/contact">Contact</NavLink>
       </div>
       <div className="login-register">

@@ -21,6 +21,25 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ERROR Pages */
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2a463f;
+  height: 100vh;
+  flex-direction: column;
+  gap: 30px;
+}
+.error-button {
+  background-color: #2a463f;
+  color: #e9edc9;
+  padding: 1.7vw;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+}
+
 nav {
   display: flex;
   justify-content: space-between;

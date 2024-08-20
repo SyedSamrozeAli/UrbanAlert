@@ -5,7 +5,6 @@ import { setCurrentUser } from "../Slices/userSlice";
 import { useDispatch } from "react-redux";
 import { DashboardNavbar } from "../Components/DashboardNavbar";
 import { Loading } from "../Components/Loading";
-import { Error } from "../Components/Error";
 import "../styles/dashboard.css";
 import { toast } from "react-toastify";
 export const UserDashboardLayout = () => {
@@ -22,7 +21,7 @@ export const UserDashboardLayout = () => {
       .get(`/api/user`)
       .then((response) => {
         // getting the user data from our response and saving it in state
-
+        console.log("MyYser:", response.data.data.userData);
         dispatch(setCurrentUser(response.data.data.userData));
 
         setLoading(false);
